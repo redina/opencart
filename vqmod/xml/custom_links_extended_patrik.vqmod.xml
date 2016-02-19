@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>Custom Links in Menu (Extended)</id>
+	<version>0.1</version>
+	<vqmver>2.5</vqmver>
+	<author>Patrik</author>
+	<link></link>
+	<file name="catalog/view/theme/default/template/common/header.tpl">
+		<operation error="skip">
+			<search position="after" offset="2"><![CDATA[
+        <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
+]]></search>
+			<add><![CDATA[
+			<?php if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') { $cwhost = "https://". $_SERVER['HTTP_HOST']; } else { $cwhost = "http://". $_SERVER['HTTP_HOST']; } ?>
+			<div class="navpatrik pull-right"><ul class="nav navbar-nav">
+                                <li><a href="index.php?route=information/information&information_id=9">Butiken</a></li>
+                                <li><a href="index.php?route=fishsearch/fishsearch">Fisksök</a></li>
+                                <li><a href="index.php?route=newsletter/newsletter">Nyhetsbrev</a></li>
+								<li><a href="https://www.facebook.com/Aquawarehouse-141131242597868/">Facebook</a></li>
+								</ul>
+			</div>
+]]></add>
+		</operation>
+	</file>
+</modification>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>Custom Links in admin tool Menu (Extended)</id>
+	<version>0.1</version>
+	<vqmver>3.0</vqmver>
+	<author>Patrik Nordelind</author>
+	<link></link>
+<!-- edit header controller -->
+<file name="admin/controller/common/menu.php">
+<!-- create link to your page -->   
+    <operation error="log">
+        <search position="after"><![CDATA[$data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'], 'SSL');]]></search>
+        <add><![CDATA[
+        $data['tool_fish'] = $this->url->link('tool/fish', 'token=' . $this->session->data['token'], 'SSL');
+        ]]></add>
+    </operation>
+</file>
+
+<!-- edit header template -->
+<file name="admin/view/template/common/menu.tpl">
+<!-- add link to your page -->  
+    <operation error="log">
+        <search position="after"><![CDATA[<li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>]]></search>
+        <add><![CDATA[
+        <li><a href="<?php echo $tool_fish;?>">Fisk admin</a></li>               
+        ]]></add>
+    </operation>    
+</file>
+
+</modification>

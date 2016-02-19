@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>Custom filter name search</id>
+	<version>0.1</version>
+	<vqmver>3.0</vqmver>
+	<author>Patrik Nordelind</author>
+	<link></link>
+<!-- edit search -->
+<file name="admin/model/catalog/product.php">
+    <operation error="log">
+        <search position="replace"><![CDATA[$sql .= " AND pd.name LIKE '" . $this->db->escape($data['filter_name']) . "%'";]]></search>
+        <add><![CDATA[$sql .= " AND pd.name LIKE '%" . $this->db->escape($data['filter_name']) . "%'";]]></add>
+    </operation>
+</file>
+
+</modification>

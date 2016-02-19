@@ -1,0 +1,13 @@
+<!-- Created using vQmod XML Generator by UKSB - http://uksb.github.com/vqgen/ //-->
+<modification>
+	<id><![CDATA[Patrik test]]></id>
+	<version><![CDATA[0.1]]></version>
+	<vqmver><![CDATA[2.5]]></vqmver>
+	<author><![CDATA[Patrik]]></author>
+	<file path="catalog\model\catalog/" name="product.php">
+		<operation info="test">
+			<search position="replace" offset="2"><![CDATA[if (!empty($data['filter_description'])) {]]></search>
+			<add><![CDATA[$sql .= " OR pd.description LIKE '%" . $this->db->escape($data['filter_name']) . "%'";]]></add>
+		</operation>
+	</file>
+</modification>
