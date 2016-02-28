@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>Product out of stock</id>
+	<version>0.1</version>
+	<vqmver>2.5</vqmver>
+	<author>Patrik</author>
+	<link></link>
+	<file name="catalog/view/theme/default/template/product/product.tpl">
+		<operation error="skip">
+			<search position="replace" ><![CDATA[
+        <li><?php echo $text_stock; ?> <?php echo $stock; ?></li>
+]]></search>
+			<add><![CDATA[
+			<li><?php echo $text_stock; ?> <span <?php if ($stock == "Beställningsvara") { echo 'class="label-danger"'; } ?>><?php echo $stock; ?></span></li>
+]]></add>
+		</operation>
+	</file>
+</modification>
