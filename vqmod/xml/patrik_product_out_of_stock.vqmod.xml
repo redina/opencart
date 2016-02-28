@@ -11,7 +11,7 @@
         <li><?php echo $text_stock; ?> <?php echo $stock; ?></li>
 ]]></search>
 			<add><![CDATA[
-			<li><?php echo $text_stock; ?> <span <?php if ($stock == "Beställningsvara") { echo 'class="label-danger"'; } ?>><?php echo $stock; ?></span></li>
+			<li><?php echo $text_stock; ?> <span <?php if ($stock == "Beställningsvara") { echo 'class="label label-danger"'; } else { echo 'class="label label-success"'; } ?>><?php echo $stock; ?></span></li>
 ]]></add>
 		</operation>
 	</file>
